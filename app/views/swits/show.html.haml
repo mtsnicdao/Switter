@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%p
+  %b Title:
+  = @swit.title
+%p
+  %b Text:
+  = @swit.text
+
+= link_to 'Edit', edit_swit_path(@swit)
+\|
+= link_to 'Back', swits_path

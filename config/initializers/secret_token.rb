@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-Switter::Application.config.secret_key_base = 'e1ac69e03a651c3b8ec54316b05ef903f5dc69a46c287e9628d7ac20a772c31d07aecd979801788d0d21d1215429708395c51770270b0ef7151a5639b3247e8d'
+Switter::Application.config.secret_key_base = '3934e8fc2561c94562973cb3913a5c0bab9af3132561416ce3209e5b6cb8f42fb90fb3b1a5c12caa7dfebe70e83a299b16acfb38792cceb112eb0ed483091ebb'

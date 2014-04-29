@@ -1,0 +1,69 @@
+// Place all the styles related to the articles controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#header{
+	background-color:#00BFFF;
+	height: 50px; 
+	margin: 20px;
+	color: red;
+	border-radius: 10px;
+}
+#title{
+	color: yellow;
+	margin-left: 20px;
+	margin-top: 20px;
+}
+#welcome{
+	float: right;
+	margin-top: -40px;
+	margin-right: 20px;
+}
+table{
+	background: #F4FA58;
+}
+.article{
+	background: #A9F5F2;
+	width: 75%;
+	margin: 0 auto;
+	margin-bottom: 20px;
+	padding: 10px;
+	border-radius: 10px;
+}
+.author{
+	font-weight: bold;
+	color:blue;
+}
+.text{
+	margin-left: 100px;
+}
+#createswit{
+	width:75%;
+	margin: 0 auto;
+	padding: 10px;
+}
+#createbutton{
+	margin-left: 365px;
+}
+.activities{
+	width: 275px;
+	margin-left: 250px;
+}
+#backedit{
+	margin-left: 20px;
+}
+#commentdiv{
+	background: #A9F5F2;;
+	width: 75%;
+	margin: 0 auto;
+	margin-bottom: 10px;
+	border-radius: 5px;
+	padding: 5px;
+}
+.comment{
+	background: #01DFD7;
+	margin: 0 auto;
+	margin-bottom: 5px;
+	padding: 5px;
+	border-radius: 3px;
+}

@@ -1,0 +1,24 @@
+<div id="header">
+  <h3 id="title"> Switter </h3>
+  <h5 id = "welcome"> Welcome Sweety! </h2>
+</div>
+ 
+ <%= render 'form' %>
+
+<% @articles.each do |article| %>
+  <div class="article">
+    <p class="author"> Author: <%= article.author %> </p>
+    <div class="text"><%= article.text %></div>
+
+    <div class="activities">
+      <%= link_to 'Sweet', article_path(article) %> |
+      <%= link_to 'Sour', article_path(article) %> |
+      <%= link_to 'Comments', article_path(article) %> |
+      <%= link_to 'Edit', edit_article_path(article) %> |
+      <%= link_to 'Delete', article_path(article),
+                    method: :delete, data: { confirm: 'Are you sure?' } %>
+
+    </div>
+  </div>
+
+  <% end %>

@@ -1,24 +1,28 @@
-<div id="header">
-  <h3 id="title"> Switter </h3>
-  <h5 id = "welcome"> Welcome Sweety! </h2>
-</div>
- 
- <%= render 'form' %>
+<%= render 'header' %>
+  
+<div id="wrapper"> 
+    <%= render 'userprofile' %>
+   <%= render 'form' %>
 
-<% @articles.each do |article| %>
-  <div class="article">
-    <p class="author"> Author: <%= article.author %> </p>
-    <div class="text"><%= article.text %></div>
+  <div id="article">
+    <h4 id="l1"> Swits </h4>
+    <% @articles.each do |article| %>
+      <p id="author"><%= article.author %> </p>
+      <p id="time">Posted <%= time_ago_in_words(article.created_at) %></p>
+      <p id="taste"> <%= article.sweet %> Sweet | <%= article.sour %> Sour</p>
+      <div id="text"><%= article.text %></div>
 
-    <div class="activities">
-      <%= link_to 'Sweet', article_path(article) %> |
-      <%= link_to 'Sour', article_path(article) %> |
-      <%= link_to 'Comments', article_path(article) %> |
-      <%= link_to 'Edit', edit_article_path(article) %> |
-      <%= link_to 'Delete', article_path(article),
-                    method: :delete, data: { confirm: 'Are you sure?' } %>
+      <div id="activities">
+        <%= link_to 'Sweet', sweet_post_path(id: article.id) %> |
+        <%= link_to 'Sour', sour_post_path(id: article.id) %> |
+        <%= link_to 'Comments', article_path(article) %> |
+        <%= link_to 'Edit', edit_article_path(article) %> |
+        <%= link_to 'Delete', article_path(article), method: :delete, data: { confirm: 'Are you sure?' } %>
 
-    </div>
+      </div> 
+      <hr/>
+    <% end %>
   </div>
 
-  <% end %>
+    
+</div>

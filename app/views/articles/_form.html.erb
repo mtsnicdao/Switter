@@ -13,17 +13,18 @@
 
   <div id = "createswit">
     <p>
-      <%= f.label :author %>
-      <%= f.text_field :author %>
+      <%= f.hidden_field :author, value: current_user.email %>
     </p>
    
+    <p id="writeswit">
+      <%= f.label :"Write your swit", id:"switlabel" %>
+      <%= f.text_area :text, :placeholder => "Write swit", id:"switbox" %>
+    </p>
     <p>
-      <%= f.label :swit %>
-      <%= f.text_area :text %>
+      <%= f.submit :class => "tiny button", id:"createbutton"%>
     </p>
-    <p id = "createbutton">
-      <%= f.submit :class => "button"%>
-    </p>
+
+    <span class="countdown">hjhghg</span>
 
   </div>
 <% end %>

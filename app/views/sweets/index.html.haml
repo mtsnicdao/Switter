@@ -1,0 +1,21 @@
+%h1 Listing sweets
+
+%table
+  %tr
+    %th Author
+    %th Article
+    %th
+    %th
+    %th
+
+  - @sweets.each do |sweet|
+    %tr
+      %td= sweet.author
+      %td= sweet.article_id
+      %td= link_to 'Show', article_sweet_path(@article, sweet)
+      %td= link_to 'Edit', edit_article_sweet_path(@article, sweet)
+      %td= link_to 'Destroy', [@article, sweet], confirm: 'Are you sure?', method: :delete
+
+%br
+
+= link_to 'New Sweet', new_article_sweet_path(@article)

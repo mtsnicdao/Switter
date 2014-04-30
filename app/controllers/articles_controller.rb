@@ -41,9 +41,33 @@ class ArticlesController < ApplicationController
 
 	def destroy
 		@article = Article.find(params[:id])
-		@article.destroy
+		if @article.destroy
+			redirect_to articles_path
+		else
+			render 'edit'
+		end
+	end
 
-		redirect_to articles_path
+	def sweet
+		@article = Article.find_by(id: params[:id])
+    
+	    if @article
+	      @article.sweet = @article.sweet.to_i + 1
+	      if @article.save
+	        redirect_to articles_path
+	      end
+	    end
+	end
+
+	def sour
+		@article = Article.find_by(id: params[:id])
+    
+	    if @article
+	      @article.sour = @article.sour.to_i + 1
+	      if @article.save
+	        redirect_to articles_path
+	      end
+	    end
 	end
 	 
 	private

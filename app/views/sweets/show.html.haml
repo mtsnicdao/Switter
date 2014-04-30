@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%p
+  %b Author:
+  = @sweet.author
+%p
+  %b Article:
+  = @sweet.article_id
+
+= link_to 'Edit', edit_article_sweet_path(@article, @sweet)
+\|
+= link_to 'Back', article_sweet_path(@article)

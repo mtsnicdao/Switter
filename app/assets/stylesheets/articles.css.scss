@@ -2,10 +2,23 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+body{
+	margin: 0;
+	padding: 0;
+	background-color: rgb(48,72,96);
+}
+#wrapper{
+	width: 70%;
+	margin: 0 auto;
+}
+
 #header{
 	background-color:#00BFFF;
+	width: 80%;
 	height: 50px; 
-	margin: 20px;
+	margin: 0 auto;
+	margin-top: 20px;
+	margin-bottom: 20px;
 	color: red;
 	border-radius: 10px;
 }
@@ -13,57 +26,150 @@
 	color: yellow;
 	margin-left: 20px;
 	margin-top: 20px;
+	font-weight: bolder;
+	font-size: 25pt;
 }
 #welcome{
 	float: right;
 	margin-top: -40px;
+	margin-right: 180px;
+}
+#setting{
+	float: right;
+	margin-top: -40px;
+	margin-right: 100px;
+}
+#logout{
+	float: right;
+	margin-top: -40px;
 	margin-right: 20px;
+}
+
+#profile{
+	background-color: #A9F5F2;
+	width: 35%;
+	height: 280px;
+	float: left;
+	border-radius: 10px;
 }
 table{
 	background: #F4FA58;
 }
-.article{
-	background: #A9F5F2;
-	width: 75%;
+#createswit{
+	background-color: rgba(168,192,216,0.8);
+	width:60%;
+	float: right;
+	margin: 0 auto;
+	padding: 10px;
+	padding-bottom: 0px;
+	border-radius: 10px;
+	margin-bottom: 10px;
+	height: 240px;
+}
+#article{
+	float: right;
+	background: rgba(240,216,216,0.7);
+	width: 60%;
 	margin: 0 auto;
 	margin-bottom: 20px;
 	padding: 10px;
 	border-radius: 10px;
 }
-.author{
+#author{
 	font-weight: bold;
+	font-size: 12pt;
 	color:blue;
 }
-.text{
+#time{
+	margin-top: -20px;
+	font-size: 9pt;
+	font-style: italic;
+}
+#text{
+	margin-top: -10px;
 	margin-left: 100px;
 }
-#createswit{
-	width:75%;
-	margin: 0 auto;
-	padding: 10px;
+#taste{
+	font-size: 10pt;
+	margin-top:-20px;
 }
+
 #createbutton{
-	margin-left: 365px;
+	float: right;
 }
-.activities{
-	width: 275px;
-	margin-left: 250px;
+#activities{
+	width: 300px;
+	float: right;
 }
 #backedit{
 	margin-left: 20px;
 }
-#commentdiv{
-	background: #A9F5F2;;
-	width: 75%;
+#current_user{
+	font-weight: bolder;
+	font-size: large;
 	margin: 0 auto;
-	margin-bottom: 10px;
-	border-radius: 5px;
-	padding: 5px;
+	padding-left: 5px;
+	padding-top: 5px;
 }
-.comment{
-	background: #01DFD7;
+.accordion{
+	margin-top: 40px;
+}
+#divsetting{
+	width: 40%;
 	margin: 0 auto;
-	margin-bottom: 5px;
-	padding: 5px;
-	border-radius: 3px;
+	background-color: #A8C0D8;
+	padding: 10px;
+	border-radius: 10px;
+}
+#edit{
+	width: 70%;
+	margin: 0 auto;
+}
+#updatebutton, #signinbutton{
+	border-radius: 5px;
+	background-color: #304860;
+	margin-left: 175px;
+	width: 40%;
+}
+#createbutton{
+	border-radius: 5px;
+	background-color: #304860;
+}
+#signdiv{
+	width: 40%;
+	margin: 0 auto;
+	background-color: rgba(168,168,168, 0.5);
+	border-radius: 15px;
+}
+#sign{
+	margin: 0 auto;
+	width: 75%;
+}
+#signtitle{
+	padding: 10px;
+}
+#f1{
+	border-radius: 10px;
+}
+#l1{
+	margin-top: 20px;	
+}
+#link{
+	margin-left: 20px;
+	padding-bottom: 10px;
+}
+#switlabel{
+	font-size: 15pt;
+	margin-bottom: 10px;
+}
+#switbox{
+	width: 100%;
+	margin: 0 auto;
+	height: 100px;
+}
+
+.countdown {
+  display: inline;
+  padding-left: 30px;
+  color: red;
 }

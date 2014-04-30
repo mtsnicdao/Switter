@@ -1,16 +1,28 @@
 Switter::Application.routes.draw do
+  resources :sweets
+
+  devise_for :users
   get "users/new"
   #get "switter/index"
 
+  get 'article/sweet/:id' =>'articles#sweet', as: 'sweet_post'
+  get 'article/sour/:id' =>'articles#sour', as: 'sour_post'
+
+  resource :user, only: [:edit] do
+    collection do
+      patch 'update_password'
+    end
+  end
+
   resources :articles do
-    resources :comments
+    resources :comments, :users, :sweets, :sours 
   end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-   root 'switter#index'
+   root 'articles#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

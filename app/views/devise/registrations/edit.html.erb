@@ -1,0 +1,32 @@
+<%= render 'articles/header' %>
+
+<div id="divsetting">
+  <%= link_to "<< Back", :back %>
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+  <%= devise_error_messages! %>
+
+  <div id="edit"><%= f.label :email %>
+  <%= f.email_field :email, autofocus: true, id:"f1", placeholder:"Email Address" %></div>
+
+  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+  <% end %>
+
+  <div id="edit"><%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i>
+    <%= f.password_field :current_password, autocomplete: "off", id:"f1", placeholder:"Type Old Password" %></div>
+
+  <div id="edit"><%= f.label :password %> <i>(leave blank if you don't want to change it)</i>
+    <%= f.password_field :password, autocomplete: "off", id:"f1", placeholder:"Type New Password" %></div>
+
+  <div id="edit"><%= f.label :password_confirmation %>
+    <%= f.password_field :password_confirmation, autocomplete: "off", id:"f1", placeholder:"Re-type New Password" %></div>
+
+  
+
+  <div><%= f.submit "Update", :class => "button expand", id:"updatebutton" %></div>
+<% end %>
+
+
+</div>
+
+

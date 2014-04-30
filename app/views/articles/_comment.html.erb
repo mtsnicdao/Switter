@@ -1,0 +1,22 @@
+<div id="commentdiv">
+      <br/><br/> <hr/>
+      <h4>Comments</h4> <hr/>
+
+      <% @article.comments.each do |comment| %>
+        <div id = "comment">
+          <p> <strong> <%= comment.commenter %> </strong> </p>
+          <p id="time"> Posted <%= time_ago_in_words(@article.created_at) %></p>
+          <p> <%= comment.body %> </p> <hr/>
+        </div>
+      <% end %>
+
+     <br/><br/>
+
+      <h4>Add a Comment</h4> <hr/>
+
+      <%= form_for([@article, @article.comments.build]) do |f| %>
+          <p> <%= f.hidden_field :commenter, value: current_user.email %> </p>
+          <p> <%= f.text_area :body, :placeholder => "Write your post", id:"switbox" %> </p>
+          <p> <%= f.submit :class => "tiny button",  id:"createbutton"%> </p>
+     <% end %>
+    </div>

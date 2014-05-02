@@ -1,3 +1,4 @@
+<body>
 <div id="header">
     <h3 id="title"> Switter </h3>
     <h5 id="logout"> <%= render "devise/shared/links" %> </h5>
@@ -12,6 +13,9 @@
 	  <div id="sign"><%= f.label :email %>
 	  <%= f.email_field :email, autofocus: true, id:"f1" %></div>
 
+	  <div id="sign"><%= f.label :username %>
+	  <%= f.text_field :uname, id:"f1" %></div>
+
 	  <div id="sign"><%= f.label :password %>
 	    <%= f.password_field :password, autocomplete: "off", id:"f1" %></div>
 
@@ -24,6 +28,6 @@
 	
 </div>
 
-
+</body>
 
 

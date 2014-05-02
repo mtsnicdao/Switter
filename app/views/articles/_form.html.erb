@@ -18,13 +18,12 @@
    
     <p id="writeswit">
       <%= f.label :"Write your swit", id:"switlabel" %>
-      <%= f.text_area :text, :placeholder => "Write swit", id:"switbox" %>
+      <%= f.text_area :text, :placeholder => "Write swit", id:"switbox", maxlength:140%>
     </p>
     <p>
-      <%= f.submit :class => "tiny button", id:"createbutton"%>
+      <%= f.submit "Post", :class => "tiny button", id:"createbutton"%>
     </p>
 
-    <span class="countdown">hjhghg</span>
-
+    <span id="count"></span>
   </div>
 <% end %>

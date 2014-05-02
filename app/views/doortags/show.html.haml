@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%p
+  %b Article:
+  = @doortag.article_id
+%p
+  %b Tag:
+  = @doortag.tag
+
+= link_to 'Edit', edit_doortag_path(@doortag)
+\|
+= link_to 'Back', doortags_path

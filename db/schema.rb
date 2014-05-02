@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140430023316) do
+ActiveRecord::Schema.define(version: 20140502032328) do
 
   create_table "articles", force: true do |t|
     t.string   "author"
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 20140430023316) do
     t.datetime "updated_at"
     t.integer  "sweet"
     t.integer  "sour"
+    t.text     "content"
   end
 
   create_table "comments", force: true do |t|
@@ -31,6 +32,13 @@ ActiveRecord::Schema.define(version: 20140430023316) do
   end
 
   add_index "comments", ["article_id"], name: "index_comments_on_article_id"
+
+  create_table "doortags", force: true do |t|
+    t.integer  "article_id"
+    t.string   "tag"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "sweets", force: true do |t|
     t.string   "author"
@@ -44,7 +52,7 @@ ActiveRecord::Schema.define(version: 20140430023316) do
     t.string   "string"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "email",                  default: "", null: false
+    t.string   "email"                
     t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
@@ -54,6 +62,8 @@ ActiveRecord::Schema.define(version: 20140430023316) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
+    t.string   "uname", default: "", null: false
+    t.string   "motto"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

@@ -1,6 +1,6 @@
 class ArticlesController < ApplicationController
 	def new
-		@articles = Article.all
+		@articles = Article.all.order('created_at desc')
 		@article = Article.new
 	end
 
@@ -8,7 +8,15 @@ class ArticlesController < ApplicationController
 	  @article = Article.new(article_params)
 	 
 	  if @article.save
-	  	@articles = Article.all
+	  	@tags = @article.text.scan(/\{[^}]*\}/)
+	  	@tags.each do |doortag|
+	  		doortag = doortag.gsub(/\{/,"")
+	  		doortag = doortag.gsub(/\}/,"")
+	  		@doortag = Doortag.create(article_id: @article.id, tag: doortag)
+	  		@doortag.save
+	  	end
+
+	  	@articles = Article.all.order('created_at desc')
 		@article = Article.new
 	  	render 'index'
 	  else
@@ -21,7 +29,7 @@ class ArticlesController < ApplicationController
 	end
 
 	def index
-		@articles = Article.all
+		@articles = Article.all.order('created_at desc')
 		@article = Article.new
 	end
 
@@ -68,6 +76,12 @@ class ArticlesController < ApplicationController
 	        redirect_to articles_path
 	      end
 	    end
+	end
+
+	def related
+		@tag = params[:doortag]
+		@articles = Article.all.order('created_at desc')
+		@doortags = Doortag.where(tag: @tag)
 	end
 	 
 	private

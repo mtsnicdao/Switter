@@ -1,0 +1,20 @@
+<nav class="top-bar" data-topbar>
+  <ul class="title-area">
+    <li class="name">
+      <h1><a href="#">Switter</a></h1>
+  </ul>
+
+  <section class="top-bar-section">
+    <!-- Right Nav Section -->
+    <ul class="right">
+      <li class="active"><%= link_to current_user.email, articles_path %></li>
+      <li class="active"><%= link_to 'Settings', edit_user_registration_path, id:"links" %></li>
+      <li class="active"><% if user_signed_in? %>
+        <%= link_to "Sign out", destroy_user_session_path,:method => 'delete' %>
+      <% else %>
+        <%= link_to "Sign up", new_user_registration_path %> or <%= link_to "sign in", new_user_session_path %>
+      <% end %></li>      
+    </ul>
+
+  </section>
+</nav>

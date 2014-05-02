@@ -3,10 +3,19 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 updateCountdown = ->
-  remaining = 140 - jQuery("#article_text").val().length
-  jQuery(".countdown").text remaining + " characters remaining"
+  remaining = 140 - jQuery("#switbox").val().length
+  jQuery("#count").text remaining + " characters remaining"
+  jQuery("#count").css "color", (if (remaining < 10)  then "red")
+
+
+
 
 jQuery ->
   updateCountdown()
-  $("#article_text").change updateCountdown
-  $("#article_text").keyup updateCountdown
+  $("#switbox").change updateCountdown
+  $("#switbox").keyup updateCountdown
+
+#$.ajax(url: "/test").done (html) ->
+ # $("#results").append html
+
+

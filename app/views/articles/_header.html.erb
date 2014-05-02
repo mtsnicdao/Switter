@@ -1,7 +1,7 @@
 <div id="header">
     <h3 id="title"> Switter </h3>
-    <h5 id="welcome"> <%= link_to current_user.email, articles_path %> </h5>
-    <h5 id="setting"> <%= link_to 'Settings', edit_user_registration_path %> </h5>
+    <h5 id="welcome"> <%= link_to current_user.email, articles_path %></h5>
+    <h5 id="setting"> <%= link_to 'Settings', edit_user_registration_path, id:"links" %> </h5>
     <h5 id="logout"> 
       <% if user_signed_in? %>
         <%= link_to "Sign out", destroy_user_session_path,:method => 'delete' %>

@@ -4,16 +4,20 @@
   <%= render 'userprofile' %>
 
   <div id="article">
+   <%= link_to "<< Back", :back %>
    <h3 id="l1"> Your Swit </h3> <br/>
-   <p id="time"> Posted <%= time_ago_in_words(@article.created_at) %></p>   <hr/>
+   <p id="time"> Posted <%= time_ago_in_words(@article.created_at) %> ago</p>   <hr/>
    <p id="text"> <strong><%= @article.text %></strong> </p> <br/><br/>
    
 
     <div id="activities">
-      <%= link_to 'Sweet'%> |
-      <%= link_to 'Sour'%> |
-      <%= link_to 'Edit' %> |
-      <%= link_to 'Delete'%>
+      <dl class="sub-nav">
+            <dd> <%= link_to 'Sweet' %></dd>
+            <dd> <%= link_to 'Sour' %></dd>
+            <dd> <%= link_to 'Comments' %></dd>
+            <dd> <%= link_to 'Edit' %> </dd>
+            <dd> <%= link_to 'Delete'%> </dd>
+          </dl>
     </div>
 
     <%= render 'comment' %>

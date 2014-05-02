@@ -1,0 +1,8 @@
+<div id="activities">
+        <%= link_to 'Sweet', sweet_post_path(id: article.id) %> |
+        <%= link_to 'Sour', sour_post_path(id: article.id) %> |
+        <%= link_to 'Comments', article_path(article) %> |
+        <%= link_to 'Edit', edit_article_path(article) %> |
+        <%= link_to 'Delete', article_path(article), method: :delete, data: { confirm: 'Are you sure?' } %>
+
+      </div>

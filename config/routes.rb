@@ -1,4 +1,9 @@
 Switter::Application.routes.draw do
+  resources :doortags
+
+  get 'doortags/related'
+  get "users/index"
+  get "articles/index"
   resources :sweets
 
   devise_for :users
@@ -7,6 +12,7 @@ Switter::Application.routes.draw do
 
   get 'article/sweet/:id' =>'articles#sweet', as: 'sweet_post'
   get 'article/sour/:id' =>'articles#sour', as: 'sour_post'
+  get '/door_tag' => 'doortags#related'
 
   resource :user, only: [:edit] do
     collection do
@@ -14,8 +20,9 @@ Switter::Application.routes.draw do
     end
   end
 
+  resources :users
   resources :articles do
-    resources :comments, :users, :sweets, :sours 
+    resources :comments, :doortags
   end
 
   # The priority is based upon order of creation: first created -> highest priority.

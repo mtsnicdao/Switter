@@ -1,0 +1,43 @@
+<body>
+	<%= render 'articles/header' %>
+    
+   <div id="wrapper"> 
+     <%= render 'articles/userprofile' %>
+
+     <div id="article">
+     	<%= link_to "<< Back", :back %>
+     	<h3 id="l1"> Related Swits </h3> <br/><br/>
+
+     	<% @doortags.each do |doortag| %>
+     		<img src="http://thenickyblog.com/wp-content/uploads/2011/05/twitter-bird-1-300x300.png" alt="profilepic" width=50 height=50 id="pic">
+     		<p id="author"> <%= @articles.where(id: doortag.article_id).first.author %> </p>
+  		 	<p id="time"> Posted <%= time_ago_in_words(@articles.where(id: doortag.article_id).first.created_at) %></p>
+  		 	<p id="text"> <strong><%= @articles.where(id: doortag.article_id).first.text %></strong> </p>
+
+  		 	 <div id="activities">
+			      <dl class="sub-nav">
+			            <dd> <%= link_to 'Sweet' %></dd>
+			            <dd> <%= link_to 'Sour' %></dd>
+			            <dd> <%= link_to 'Comments' %></dd>
+			            <dd> <%= link_to 'Edit' %> </dd>
+			            <dd> <%= link_to 'Delete'%> </dd>
+			          </dl>
+			    </div>
+  		 	<hr/>
+
+		<% end %>
+
+     </div>
+
+     <div id="trending">
+     	<h3 id="l1"> Trending </h3> <hr/><br/>
+
+     	<% @tags.each do |doortag| %>
+     		<p id="trends"> <%= doortag.tag %> <br/> </p>
+     	<% end %>
+     </div>
+
+   </div>
+
+
+</body>
